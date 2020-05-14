@@ -1,20 +1,9 @@
-buildscript {
-    val kotlinVersion: String by project
-    val koinVersion: String by project
-    val gradleAndroidPluginVersion: String by project
-    val googleServicesVersion: String by project
-
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath("com.android.tools.build:gradle:$gradleAndroidPluginVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("org.koin:koin-gradle-plugin:$koinVersion")
-        classpath("com.google.gms:google-services:$googleServicesVersion")
-    }
+plugins {
+    id("com.android.application") apply false
+    kotlin("android") apply false
+    kotlin("android.extensions") apply false
+    kotlin("kapt") apply false
+    id("com.google.gms.google-services") apply false
 }
 
 allprojects {

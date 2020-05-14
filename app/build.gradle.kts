@@ -3,16 +3,14 @@ import org.jetbrains.kotlin.gradle.internal.AndroidExtensionsFeature.PARCELIZE
 val kotlinVersion: String by project
 val koinVersion: String by project
 val gradleAndroidPluginVersion: String by project
+val googleServicesVersion: String by project
 
 plugins {
     id("com.android.application")
-    id("koin")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
     id("com.google.gms.google-services")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -84,9 +82,12 @@ dependencies {
     implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
     implementation("org.koin:koin-androidx-fragment:$koinVersion")
 
-    implementation("com.google.firebase:firebase-analytics:17.3.0")
-    implementation("com.google.firebase:firebase-ml-vision:24.0.2")
-    implementation("com.google.firebase:firebase-ml-vision-image-label-model:20.0.0")
+    implementation("com.google.firebase:firebase-analytics:17.4.1")
+    implementation("com.google.firebase:firebase-ml-vision:24.0.3")
+    implementation("com.google.firebase:firebase-ml-vision-image-label-model:20.0.1")
+
+    implementation("com.github.bumptech.glide:glide:4.11.0")
+    kapt("com.github.bumptech.glide:compiler:4.11.0")
 
     testImplementation("junit:junit:4.12")
 
