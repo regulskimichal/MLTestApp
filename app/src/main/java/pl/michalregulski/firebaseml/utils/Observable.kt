@@ -20,7 +20,7 @@ open class Observable<T : Any?>(
 
     private var value = value
         private set(value) {
-            if (field != value) {
+            if (field !== value) {
                 field = value
                 notifyChange()
             }
